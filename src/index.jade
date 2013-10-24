@@ -1,0 +1,34 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    link(href='http://fonts.googleapis.com/css?family=Monoton', rel='stylesheet', type='text/css')
+    title Decompress Sponsors
+
+    link(rel='stylesheet', type='text/css', href='styles/main.css')
+
+  body
+
+    article
+
+      section(data-bespoke-state='decompress')
+        h1.decompress-logo
+          each letter in 'Decompress'.split('')
+            span= letter
+
+      section(data-bespoke-state='sponsor')
+        h2.sponsor-logo.sponsor-logo--buildbox Buildbox
+
+      section(data-bespoke-state='sponsor')
+        h2.sponsor-logo.sponsor-logo--thoughtworks Thoughtworks
+
+      section(data-bespoke-state='sponsor')
+        h2.sponsor-logo.sponsor-logo--melbourne-uni University of Melbourne
+
+    script(src='bower_components/bespoke.js/dist/bespoke.min.js')
+    script(src='bower_components/bespoke-scale/dist/bespoke-scale.min.js')
+    script(src='bower_components/bespoke-hash/dist/bespoke-hash.min.js')
+    script(src='bower_components/bespoke-state/dist/bespoke-state.min.js')
+    script(src='bower_components/bespoke-loop/dist/bespoke-loop.min.js')
+    script(src='scripts/main.js')

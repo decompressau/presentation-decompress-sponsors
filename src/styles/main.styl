@@ -1,0 +1,112 @@
+@import 'nib'
+
+slide_width = 640px
+slide_height = 480px
+
+decompress_pink = #FFC2C2
+decompress_brown = #332121
+
+// base
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+@media print
+  *
+    -webkit-print-color-adjust: exact
+
+@page
+  size: landscape
+  margin: 0
+
+// bespoke.js layout styles
+
+article
+  display: none
+  &.bespoke-parent
+    display: block
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    overflow: hidden
+    @media print
+      overflow: visible
+      position: static
+    perspective: 600px
+
+.bespoke-slide
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  text-align: center
+  width: slide_width
+  height: slide_height
+  position: absolute
+  top: 50%
+  margin-top: (slide_height / 2) * -1
+  left: 50%
+  margin-left: (slide_width / 2) * -1
+  padding: 40px
+
+.bespoke-inactive
+  opacity: 0
+  pointer-events: none
+
+.bespoke-active
+  opacity: 1
+
+// bespoke-state styles
+.bespoke-parent
+  &.decompress
+    background: decompress_pink
+  &.sponsor
+    background: decompress_brown
+
+// bespoke-scale styles
+
+.bespoke-scale-parent
+  perspective: 600px
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  @media print
+    transform: none !important
+
+// typography
+
+.decompress-logo
+  text-shadow: 1px 1px 0 #332121, 2px 2px 0 #332121, 3px 3px 0 #332121, 4px 4px 0 #332121, 5px 5px 0 #332121, 6px 6px 0 #332121, 7px 7px 0 #332121, 8px 8px 0 #332121, 9px 9px 0 #332121, 10px 10px 0 #332121, 11px 11px 0 #332121, 12px 12px 0 #332121, 13px 13px 0 #332121, 14px 14px 0 #332121, 15px 15px 0 #332121, 16px 16px 0 #332121, 17px 17px 0 #332121, 18px 18px 0 #332121, 19px 19px 0 #332121, 20px 20px 0 #332121, 21px 21px 0 #332121, 22px 22px 0 #332121, 23px 23px 0 #332121, 24px 24px 0 #332121, 25px 25px 0 #332121, 26px 26px 0 #332121, 27px 27px 0 #332121, 28px 28px 0 #332121, 29px 29px 0 #332121, 30px 30px 0 #332121, 31px 31px 0 #332121, 32px 32px 0 #332121, 33px 33px 0 #332121, 34px 34px 0 #332121, 35px 35px 0 #332121, 36px 36px 0 #332121, 37px 37px 0 #332121, 38px 38px 0 #332121, 39px 39px 0 #332121, 40px 40px 0 #332121
+  font-family: Monoton, Helvetica Neue
+  font-weight: normal
+  font-size: 120px
+  line-height: 100%
+  text-transform: uppercase
+  color: #FFF7F7
+  text-align: left
+  margin-top: -50px
+  span:nth-child(2):after,
+  span:nth-child(5):after
+    content: ""
+    display: block
+
+.sponsor-logo
+  overflow: hidden
+  text-indent: -200%
+  width: 75%
+  height: 75%
+  background-size: contain
+  background-position: 50% 50%
+  background-repeat: no-repeat
+  &--buildbox
+    background-image: url(../images/buildbox-logo.png)
+  &--thoughtworks
+    background-image: url(../images/thoughtworks-logo.png)
+  &--melbourne-uni
+    background-image: url(../images/melbourne-uni-logo.png)
